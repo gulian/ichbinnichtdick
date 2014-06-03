@@ -7,7 +7,7 @@ html
     meta(name='description', content='')
     meta(name='csrf-token', content=_csrf)
     meta(name='author', content='')
-    title #{title} | Hackathon Starter
+    title #{title} | IBND
     != css('styles')
   body
     include partials/navbar
@@ -16,6 +16,6 @@ html
       include partials/flash
       block content
 
-    include partials/footer
+    //- include partials/footer
 
     != js('application')
