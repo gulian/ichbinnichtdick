@@ -43,7 +43,7 @@ exports.postContact = function(req, res) {
   var name = req.body.name;
   var body = req.body.message;
   var to = 'gulian@gulian.fr';
-  var subject = 'Contact Form | Ich bin nicht dick';
+  var subject = 'Got message from '+req.body.name+ ' on IBND';
 
   var mailOptions = {
     to: to,
