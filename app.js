@@ -28,6 +28,7 @@ var homeController = require('./controllers/home');
 var userController = require('./controllers/user');
 var apiController = require('./controllers/api');
 var trackController = require('./controllers/track');
+var hitController = require('./controllers/hit');
 var contactController = require('./controllers/contact');
 
 /**
@@ -135,6 +136,7 @@ app.get('/account/unlink/:provider', passportConf.isAuthenticated, userControlle
 
 
 app.get('/track', passportConf.isAuthenticated, trackController.index);
+app.get('/hit', passportConf.isAuthenticated, hitController.index);
 
 
 // app.get('/api', apiController.getApi);
