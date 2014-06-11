@@ -1,6 +1,7 @@
 var secrets = require('../config/secrets');
 var User = require('../models/User');
 
+    var Hit = require('../models/Hit');
 
 /**
  * GET /api
@@ -8,7 +9,13 @@ var User = require('../models/User');
  */
 
 exports.index = function(req, res) {
-  res.render('track', {
-    title: 'Track your weight'
-  });
+
+    Hit.find({ user:req.user._id }, function(err, hits){
+        res.render('track', {
+            title: 'Track your weight',
+            hits:hits
+        });
+    })
+
+
 };
