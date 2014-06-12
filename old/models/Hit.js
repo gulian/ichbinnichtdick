@@ -1,6 +1,7 @@
 var mongoose = require('mongoose');
 
 var hitSchema = new mongoose.Schema({
+  // _id: {type:Number},
   timestamp: { type: Date , default: Date.now},
   details: {
     value: { type: Number, default: '' },

@@ -3,14 +3,8 @@ var User = require('../models/User');
 var Hit = require('../models/Hit');
 
 
-exports.index = function(req, res) {
+exports.add = function(req, res) {
     console.log(req.user._id);
-    // Hit.save({
-    //     user:req.user._id, details: {
-    //         value: 200,
-    //         description: "J'ai beaucoup grossi"
-    //     }
-    // });
     var hit = new Hit({
         user:req.user._id, details: {
             value: 200,
@@ -24,3 +18,11 @@ exports.index = function(req, res) {
         title: 'Track your weight'
     });
 };
+
+
+exports.getAll = function(req, res){
+    Hit.find({ user:req.user._id }, function(err, hits){
+        res.send(hits);
+    })
+};
+
