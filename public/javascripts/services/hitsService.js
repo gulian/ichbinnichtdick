@@ -5,7 +5,7 @@ angular.module('ibnd').factory('Hits', ['$resource',
                 method: 'GET',
                 isArray: true
             }
-            // ,
+            ,
             // get: {
             //     method: 'GET',
             //     params: {
@@ -21,17 +21,17 @@ angular.module('ibnd').factory('Hits', ['$resource',
             //     },
             //     isArray: false
             // },
-            // create: {
-            //     method: 'POST',
-            //     isArray: false
-            // },
-            // delete: {
-            //     method: 'DELETE',
-            //     params: {
-            //         id: '@id'
-            //     },
-            //     isArray: false
-            // }
+            create: {
+                method: 'POST',
+                isArray: false
+            },
+            delete: {
+                method: 'DELETE',
+                params: {
+                    id: '@id'
+                },
+                isArray: false
+            }
         });
     }
 ]);

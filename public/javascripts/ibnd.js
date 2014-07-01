@@ -2,7 +2,8 @@ angular.module('ibnd', [
     'ngCookies',
     'ngResource',
     'ngSanitize',
-    'ngRoute'
+    'ngRoute',
+    'nvd3ChartDirectives'
 ]).config(function($routeProvider, $locationProvider, $httpProvider) {
 
     'use strict';
