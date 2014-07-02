@@ -26,7 +26,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 app.use(app.router);
 
-mongoose.connect(process.env.MONGODB|| 'mongodb://localhost:27017/test');
+mongoose.connect(process.env.MONGODB|| 'mongodb://localhost:27017/ichbinnichtdick');
 mongoose.connection.on('error', function() {
   console.error('MongoDB Connection Error. Make sure MongoDB is running.');
 });
