@@ -27,8 +27,8 @@ angular.module('ibnd').controller('hitsController', function($scope, Hits) {
     //      Hits.create({hit:$scope.import[val]});
     // }
 
-
-    Hits.list(function(hits){
+    function parseData(hits){
+        hits = hits || $scope.hits;
         $scope.hits = hits;
 
         var obj = [angular.copy($scope.hits[0]) , angular.copy($scope.hits[$scope.hits.length-1])];
@@ -64,6 +64,11 @@ angular.module('ibnd').controller('hitsController', function($scope, Hits) {
         },{
             "key": "Objectif", "values": obj
         }];
+        $scope.$apply() ;
+    }
+
+    Hits.list(function(hits){
+        parseData(hits);
     });
 
     $scope.colorFunction = function() {
@@ -77,11 +82,12 @@ angular.module('ibnd').controller('hitsController', function($scope, Hits) {
     }
 
     $scope.remove = function(hit, $index) {
-        console.log(hit);
+        console.log(hit)
         Hits.remove({
-            id: hit.id
+            id: hit._id
         }, function() {
-            $scope.contracts.splice($index, 1);
+            $scope.hits.splice($index, 1);
+            parseData();
         }, function() {
             console.error(arguments);
         });
@@ -98,6 +104,7 @@ angular.module('ibnd').controller('hitsController', function($scope, Hits) {
                     "values": hits
                 }];
             });
+            parseData();
             $scope.newHit = {};
             $scope.showNewHitForm = false;
         }, function() {

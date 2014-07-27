@@ -67,6 +67,7 @@ app.all('*', function(req, res, n) {
 app.get('/hit', hit.getAll);
 // app.get('/hit', auth, hit.getAll);
 app.post('/hit',hit.add);
+app.delete('/hit',hit.delete);
 // app.post('/hit', auth, hit.add);
 
 
