@@ -31,38 +31,32 @@ angular.module('ibnd').controller('hitsController', function($scope, Hits) {
         hits = hits || $scope.hits;
         $scope.hits = hits;
 
-        var obj = [angular.copy($scope.hits[0]) , angular.copy($scope.hits[$scope.hits.length-1])];
-        obj[0].details.value = '80' ;
-        obj[1].details.value = '80' ;
+        // var obj = [angular.copy($scope.hits[0]) , angular.copy($scope.hits[$scope.hits.length-1])];
+        // obj[0].details.value = '80' ;
+        // obj[1].details.value = '80' ;
 
         $scope.data = [{
            "values": $scope.hits
-        },{
-            "key": "Objectif", "values": obj
         }];
 
 
         $scope.lastWeekHits = angular.copy($scope.hits).splice($scope.hits.length-7, $scope.hits.length);
-        obj = [angular.copy($scope.lastWeekHits[0]) , angular.copy($scope.lastWeekHits[$scope.lastWeekHits.length-1])];
-        obj[0].details.value = '80' ;
-        obj[1].details.value = '80' ;
+        // obj = [angular.copy($scope.lastWeekHits[0]) , angular.copy($scope.lastWeekHits[$scope.lastWeekHits.length-1])];
+        // obj[0].details.value = '80' ;
+        // obj[1].details.value = '80' ;
 
         $scope.lastWeekData = [{
            "values": $scope.lastWeekHits
-        },{
-            "key": "Objectif", "values": obj
         }];
 
 
         $scope.lastMonthHits = angular.copy($scope.hits).splice($scope.hits.length-30, $scope.hits.length);
-        obj = [angular.copy($scope.lastMonthHits[0]) , angular.copy($scope.lastMonthHits[$scope.lastMonthHits.length-1])];
-        obj[0].details.value = '80' ;
-        obj[1].details.value = '80' ;
+        // obj = [angular.copy($scope.lastMonthHits[0]) , angular.copy($scope.lastMonthHits[$scope.lastMonthHits.length-1])];
+        // obj[0].details.value = '80' ;
+        // obj[1].details.value = '80' ;
 
         $scope.lastMonthData = [{
            "values": $scope.lastMonthHits
-        },{
-            "key": "Objectif", "values": obj
         }];
         $scope.$apply() ;
     }
